@@ -1,0 +1,13 @@
+body {
+    font-family: 'Press Start 2P', cursive;
+}
+html,
+body,
+#root {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+}

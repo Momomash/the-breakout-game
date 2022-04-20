@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Layout from '../../layouts/Layout';
-import { MainPage, GamePage, NotFoundPage } from '../../pages';
+import Layout from 'layouts/Layout';
+import { MainPage, GamePage, NotFoundPage } from 'pages';
 
 function Router() {
     return (

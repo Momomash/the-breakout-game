@@ -2,20 +2,22 @@ import { Theme } from './constants';
 
 const appThemes = {
     [Theme.LIGHT]: {
+        name: Theme.LIGHT,
         colors: {
             blue: '#012c3d',
             red: '#f8444f',
-            white: '#dedede',
+            gray: '#dedede',
             lightblue: '#78bdc4',
         },
         background: '#dedede',
         color: '#012c3d',
     },
-    [Theme.BLACK]: {
+    [Theme.DARK]: {
+        name: Theme.DARK,
         colors: {
             blue: '#455d79',
             red: '#f8444f',
-            white: '#f7f8f3',
+            gray: '#f7f8f3',
             lightblue: '#4a9abb',
         },
         background: '#455d79',

@@ -6,7 +6,7 @@ export type SettingsState = {
     lang: Language;
 };
 const initialState: SettingsState = {
-    theme: Theme.BLACK,
+    theme: Theme.LIGHT,
     lang: Language.EN,
 };
 

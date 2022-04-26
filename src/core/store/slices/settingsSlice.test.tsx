@@ -8,7 +8,7 @@ describe('SettingsSlice', () => {
     };
 
     it('should handle setTheme action', () => {
-        const newTheme = Theme.BLACK
+        const newTheme = Theme.DARK
         expect(reducer(state, actions.setTheme(newTheme))).toEqual({
             ...state,
             theme: newTheme,

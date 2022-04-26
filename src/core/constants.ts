@@ -1,6 +1,6 @@
 export enum Theme {
     LIGHT = 'light',
-    BLACK = 'black',
+    DARK = 'dark',
 }
 
 export enum Language {

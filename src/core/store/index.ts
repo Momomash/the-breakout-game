@@ -20,6 +20,7 @@ const reducer = combineReducers({
 const persistConfig = {
     key: 'root',
     storage: storage('theBreakoutGameDB'),
+    debug: true,
 };
 const persistedReducer = persistReducer(persistConfig, reducer);
 

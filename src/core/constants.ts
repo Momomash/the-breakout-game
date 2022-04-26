@@ -1,9 +1,9 @@
 export enum Theme {
-    LIGHT,
-    BLACK,
+    LIGHT = 'light',
+    BLACK = 'black',
 }
 
 export enum Language {
-    EN,
-    RU,
+    EN = 'en',
+    RU = 'ru',
 }

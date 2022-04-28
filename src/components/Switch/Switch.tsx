@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import styled from '@emotion/styled';
 import { useTheme } from '@emotion/react';
+import { Position } from '../../core/constants';
+
+const HEIGHT = 26;
+const BORDER = 2;
+const MARGIN = 16;
+const CONTROL_SIZE = HEIGHT - BORDER - BORDER;
+
+type PositionType = Position.RIGHT | Position.LEFT;
 
 const Wrapper = styled.div(() => ({
     display: 'flex',
@@ -9,69 +17,73 @@ const Wrapper = styled.div(() => ({
 }));
 
 const ToggleButton = styled.button(({ theme }) => ({
-    width: '30px',
-    height: '10px',
-    borderRadius: '10px',
-    marginRight: '5px',
+    display: 'flex',
+    position: 'relative',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '60px',
+    height: `${HEIGHT}px`,
+    borderRadius: `${HEIGHT / 2}px`,
+    background: theme.colors.red,
     border: 'none',
-    backgroundColor: theme.colors.gray,
-    '&:not(:disabled)': {
-        cursor: 'pointer',
+    cursor: 'pointer',
+    fontFamily: 'inherit',
+    fontSize: '9px',
+    '&:disabled': {
+        cursor: 'default',
+        background: theme.colors.lightred,
     },
+    '&[aria-pressed="true"]:after': {
+        left: `calc(100% - ${HEIGHT}px)`,
+    },
+    '&:after': {
+        content: '""',
+        position: 'absolute',
+        zIndex: 2,
+        transition: 'all 0.3s ease-in',
+        left: `${BORDER}px`,
+        top: `${BORDER}px`,
+        width: `${CONTROL_SIZE}px`,
+        height: `${CONTROL_SIZE}px`,
+        borderRadius: '50%',
+        background: theme.colors.lightgray,
+    },
+}));
+
+const Label = styled.span(({ position }: { position: PositionType }) => ({
+    fontSize: '16px',
+    order: position === Position.RIGHT ? 'inherit' : '-1',
+    marginRight: position === Position.LEFT ? `${MARGIN}px` : 0,
+    marginLeft: position === Position.RIGHT ? `${MARGIN}px` : 0,
 }));
 
 export interface SwitchProps extends React.ComponentPropsWithoutRef<'button'> {
     checked: boolean;
     label?: string;
+    labelPosition?: PositionType;
+    checkedIcon: string | ReactNode;
+    icon: string | ReactNode;
 }
 
-const Switch: React.FC<SwitchProps> = ({ checked, label = '', ...forwardingProps }) => {
+const Switch: React.FC<SwitchProps> = ({
+    checked,
+    label = '',
+    labelPosition = Position.RIGHT,
+    checkedIcon,
+    icon,
+    ...forwardingProps
+}) => {
     const theme = useTheme();
 
     return (
         <Wrapper>
-            <ToggleButton
-                className="Toggle"
-                type="button"
-                aria-pressed={checked}
-                theme={theme}
-                {...forwardingProps}
-            >
-                <span className="Toggle__display" hidden>
-                    <svg
-                        width="18"
-                        height="14"
-                        viewBox="0 0 18 14"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                        focusable="false"
-                        className="Toggle__icon Toggle__icon--checkmark"
-                    >
-                        <path
-                            d="M6.08471 10.6237L2.29164 6.83059L1 8.11313L6.08471 13.1978L17 2.28255L15.7175 1L6.08471 10.6237Z"
-                            fill="currentcolor"
-                            stroke="currentcolor"
-                        />
-                    </svg>
-                    <svg
-                        width="13"
-                        height="13"
-                        viewBox="0 0 13 13"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                        focusable="false"
-                        className="Toggle__icon Toggle__icon--cross"
-                    >
-                        <path
-                            d="M11.167 0L6.5 4.667L1.833 0L0 1.833L4.667 6.5L0 11.167L1.833 13L6.5 8.333L11.167 13L13 11.167L8.333 6.5L13 1.833L11.167 0Z"
-                            fill="currentcolor"
-                        />
-                    </svg>
-                </span>
+            <ToggleButton type="button" aria-pressed={checked} theme={theme} {...forwardingProps}>
+                <span>{checkedIcon}</span>
+                <span>{icon}</span>
             </ToggleButton>
-            {label}
+            <Label position={labelPosition} theme={theme}>
+                {label}
+            </Label>
         </Wrapper>
     );
 };

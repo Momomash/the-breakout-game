@@ -1,12 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Language, Theme } from '../../constants';
+import { DEFAULT_THEME } from '../../appThemes';
 
 export type SettingsState = {
     theme: Theme;
     lang: Language;
 };
 const initialState: SettingsState = {
-    theme: Theme.LIGHT,
+    theme: DEFAULT_THEME,
     lang: Language.EN,
 };
 

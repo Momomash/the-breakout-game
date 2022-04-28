@@ -1,10 +1,7 @@
 import '@emotion/react';
+import { Theme as ThemeType } from 'core/appThemes';
 
 declare module '@emotion/react' {
-    export interface Theme {
-        colors: {
-            [key: string]: string;
-        };
-        background: string;
-    }
+    // eslint-disable-next-line
+    export interface Theme extends ThemeType {}
 }

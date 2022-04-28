@@ -1,11 +1,14 @@
 import { ThemeProvider } from '@emotion/react';
-import AppThemes from '../src/core/appThemes';
+import AppThemes, { DEFAULT_THEME } from '../src/core/appThemes';
+import { Theme } from '../src/core/constants';
+import GlobalStyles from '../src/layouts/GlobalStyles';
 
+// @storybook/addon-toolbars
 export const globalTypes = {
     theme: {
         name: 'Theme',
         description: 'Global theme for components',
-        defaultValue: 'light',
+        defaultValue: DEFAULT_THEME,
         toolbar: {
             items: ['light', 'dark'],
             showName: true,
@@ -13,11 +16,20 @@ export const globalTypes = {
     },
 };
 
+// global parameters
+export const parameters = {
+    layout: 'fullscreen',
+};
+
 const withThemeProvider = (Story, context) => {
     const theme = AppThemes[context.globals.theme];
+
     return (
         <ThemeProvider theme={theme}>
-            <Story {...context} />
+            <GlobalStyles />
+            <div style={{ padding: '20px' }}>
+                <Story {...context} />
+            </div>
         </ThemeProvider>
     );
 };

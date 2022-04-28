@@ -1,5 +1,7 @@
 import { SettingsSlice, SettingsState } from './settingsSlice';
 
-export { SettingsSlice };
+const { actions: SettingsActions } = SettingsSlice;
+
+export { SettingsSlice, SettingsActions };
 
 export type { SettingsState };

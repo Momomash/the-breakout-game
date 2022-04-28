@@ -3,6 +3,8 @@ export enum Theme {
     DARK = 'dark',
 }
 
+export const DEFAULT_THEME = Theme.LIGHT;
+
 export enum Language {
     EN = 'en',
     RU = 'ru',

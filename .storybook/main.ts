@@ -7,6 +7,7 @@ const config: StorybookConfig = {
         '@storybook/addon-controls',
         '@storybook/addon-docs',
         '@storybook/addon-toolbars',
+        '@storybook/addon-actions',
     ],
 };
 module.exports = config;

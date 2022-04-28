@@ -1,7 +1,8 @@
 import React, { ReactNode } from 'react';
 import styled from '@emotion/styled';
 import { useTheme } from '@emotion/react';
-import { Position } from '../../core/constants';
+
+import { Position } from 'core/constants';
 
 const HEIGHT = 26;
 const BORDER = 2;
@@ -63,6 +64,7 @@ export interface SwitchProps extends React.ComponentPropsWithoutRef<'button'> {
     labelPosition?: PositionType;
     checkedIcon: string | ReactNode;
     icon: string | ReactNode;
+    onClick: () => void
 }
 
 const Switch: React.FC<SwitchProps> = ({
@@ -71,13 +73,20 @@ const Switch: React.FC<SwitchProps> = ({
     labelPosition = Position.RIGHT,
     checkedIcon,
     icon,
+    onClick,
     ...forwardingProps
 }) => {
     const theme = useTheme();
 
     return (
         <Wrapper>
-            <ToggleButton type="button" aria-pressed={checked} theme={theme} {...forwardingProps}>
+            <ToggleButton
+                type="button"
+                aria-pressed={checked}
+                theme={theme}
+                onClick={() => onClick()}
+                {...forwardingProps}
+            >
                 <span>{checkedIcon}</span>
                 <span>{icon}</span>
             </ToggleButton>

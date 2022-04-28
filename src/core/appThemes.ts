@@ -1,7 +1,5 @@
 import { Theme as ThemeType } from './constants';
 
-export const DEFAULT_THEME = ThemeType.LIGHT;
-
 export type Theme =  {
     name: string;
     colors: {

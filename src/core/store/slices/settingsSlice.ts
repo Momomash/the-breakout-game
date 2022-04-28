@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Language, Theme } from '../../constants';
-import { DEFAULT_THEME } from '../../appThemes';
+import { Language, Theme, DEFAULT_THEME } from '../../constants';
 
 export type SettingsState = {
     theme: Theme;

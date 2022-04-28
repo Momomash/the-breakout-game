@@ -1,8 +1,11 @@
 import React from 'react';
 import { Story } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import { MdLightMode, MdDarkMode } from 'react-icons/md';
+
+import { Position } from 'core/constants';
+
 import Switch, { SwitchProps } from './Switch';
-import { Position } from '../../core/constants';
 
 export default {
     title: 'Switch',
@@ -19,6 +22,7 @@ Default.args = {
     disabled: false,
     checkedIcon: 'en',
     icon: 'ru',
+    onClick: action('onChange')
 };
 
 export const WithIcons = Template.bind({});
@@ -29,4 +33,5 @@ WithIcons.args = {
     disabled: false,
     checkedIcon: <MdLightMode size={16} />,
     icon: <MdDarkMode size={16}/>,
+    onClick: action('onChange')
 };

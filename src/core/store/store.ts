@@ -27,7 +27,7 @@ const persistedReducer = persistReducer(persistConfig, reducer);
 export type Store = {
     settings: SettingsState;
 };
-const createStore = () =>
+export const createStore = () =>
     configureStore({
         reducer: persistedReducer,
         middleware: getDefaultMiddleware({

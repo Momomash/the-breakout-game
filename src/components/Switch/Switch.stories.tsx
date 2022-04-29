@@ -3,7 +3,7 @@ import { Story } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { MdLightMode, MdDarkMode } from 'react-icons/md';
 
-import { Position } from 'core/constants';
+import { Position } from '../../core/constants';
 
 import Switch, { SwitchProps } from './Switch';
 

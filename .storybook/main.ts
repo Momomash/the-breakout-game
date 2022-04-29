@@ -4,10 +4,9 @@ const config: StorybookConfig = {
     stories: ['../src/**/*.stories.@(js|jsx|ts|tsx)'],
     addons: [
         '@storybook/addon-actions',
-        '@storybook/addon-controls',
         '@storybook/addon-docs',
+        '@storybook/addon-controls',
         '@storybook/addon-toolbars',
-        '@storybook/addon-actions',
     ],
 };
 module.exports = config;

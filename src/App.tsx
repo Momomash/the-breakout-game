@@ -1,11 +1,13 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { PersistGate } from 'redux-persist/es/integration/react';
-import { ThemeProvider } from '@emotion/react';
-import { persistor, Store } from '@/core/store';
-import appThemes from './core/appThemes';
 
+import { ThemeProvider } from '@emotion/react';
+import { useSelector } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import { PersistGate } from 'redux-persist/es/integration/react';
+
+import { persistor, Store } from '@/core/store';
+
+import appThemes from './core/appThemes';
 import Router from './core/router/Router';
 
 function App() {

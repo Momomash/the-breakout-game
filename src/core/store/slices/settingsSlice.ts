@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
 import { Language, Theme, DEFAULT_THEME } from '@/core/constants';
 
 export type SettingsState = {

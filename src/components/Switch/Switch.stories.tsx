@@ -1,6 +1,7 @@
 import React from 'react';
-import { Story } from '@storybook/react';
+
 import { action } from '@storybook/addon-actions';
+import { Story } from '@storybook/react';
 import { MdLightMode, MdDarkMode } from 'react-icons/md';
 
 import { Position } from '@/core/constants';

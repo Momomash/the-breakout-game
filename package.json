@@ -5,6 +5,7 @@
     "scripts": {
         "start": "craco start",
         "build": "craco build",
+        "lint": "eslint",
         "test": "craco test",
         "eject": "craco eject",
         "storybook": "start-storybook"

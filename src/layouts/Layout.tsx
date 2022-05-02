@@ -1,12 +1,14 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
-import styled from '@emotion/styled';
+
 import { useTheme } from '@emotion/react';
-import { connect } from 'react-redux';
+import styled from '@emotion/styled';
 import { MdDarkMode, MdLightMode } from 'react-icons/md';
+import { connect } from 'react-redux';
+import { Outlet } from 'react-router-dom';
+
 import { Switch } from '@/components';
-import { Store, SettingsActions } from '@/core/store';
 import { Theme, DEFAULT_THEME } from '@/core/constants';
+import { Store, SettingsActions } from '@/core/store';
 
 import GlobalStyles from './GlobalStyles';
 

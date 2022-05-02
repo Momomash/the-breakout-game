@@ -11,6 +11,7 @@ import {
     REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist-indexeddb-storage';
+
 import { SettingsSlice, SettingsState } from './slices';
 
 const reducer = combineReducers({

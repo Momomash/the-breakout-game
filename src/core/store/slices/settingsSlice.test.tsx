@@ -1,4 +1,5 @@
 import { Language, Theme } from '@/core/constants';
+
 import { actions, reducer, SettingsState } from './settingsSlice';
 
 describe('SettingsSlice', () => {

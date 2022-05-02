@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import styled from '@emotion/styled';
 import { useTheme } from '@emotion/react';
 
-import { Position } from '../../core/constants';
+import { Position } from '@/core/constants';
 
 const HEIGHT = 26;
 const BORDER = 2;

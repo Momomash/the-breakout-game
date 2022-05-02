@@ -1,6 +1,6 @@
 import React from 'react';
 import { act } from 'react-dom/test-utils';
-import { render, screen } from '../../core/test-utils';
+import { render, screen } from '@/core/test-utils';
 
 import Switch from './Switch';
 

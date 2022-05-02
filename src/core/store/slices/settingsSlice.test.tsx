@@ -1,5 +1,5 @@
+import { Language, Theme } from '@/core/constants';
 import { actions, reducer, SettingsState } from './settingsSlice';
-import { Language, Theme } from '../../constants';
 
 describe('SettingsSlice', () => {
     const state: SettingsState = {

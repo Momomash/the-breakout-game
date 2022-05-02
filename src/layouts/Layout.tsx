@@ -4,9 +4,9 @@ import styled from '@emotion/styled';
 import { useTheme } from '@emotion/react';
 import { connect } from 'react-redux';
 import { MdDarkMode, MdLightMode } from 'react-icons/md';
-import { Switch } from 'components';
-import { Store, SettingsActions } from 'core/store';
-import { Theme, DEFAULT_THEME } from 'core/constants';
+import { Switch } from '@/components';
+import { Store, SettingsActions } from '@/core/store';
+import { Theme, DEFAULT_THEME } from '@/core/constants';
 
 import GlobalStyles from './GlobalStyles';
 

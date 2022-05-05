@@ -16,3 +16,6 @@ export enum Position {
     TOP = 'top',
     BOTTOM = 'bottom',
 }
+
+export const gameScreenWidth = 480;
+export const gameScreenHeight = 320;

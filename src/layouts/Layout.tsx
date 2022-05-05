@@ -17,6 +17,17 @@ const LayoutDiv = styled.div`
     position: relative;
 `;
 
+const Container = styled.div`
+    max-width: 1170px;
+    margin: auto;
+`;
+
+const Header = styled.div`
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+`;
+
 function Layout({ theme: themeKey, setTheme }: { theme: Theme; setTheme: (theme: Theme) => void }) {
     const theme = useTheme();
     const isChecked = themeKey === DEFAULT_THEME;
@@ -27,14 +38,18 @@ function Layout({ theme: themeKey, setTheme }: { theme: Theme; setTheme: (theme:
 
     return (
         <LayoutDiv theme={theme}>
-            <Switch
-                checked={isChecked}
-                checkedIcon={<MdLightMode size={16} />}
-                icon={<MdDarkMode size={16} />}
-                onClick={handleChangeTheme}
-            />
+            <Header>
+                <Switch
+                    checked={isChecked}
+                    checkedIcon={<MdLightMode size={16} />}
+                    icon={<MdDarkMode size={16} />}
+                    onClick={handleChangeTheme}
+                />
+            </Header>
             <GlobalStyles />
-            <Outlet />
+            <Container>
+                <Outlet />
+            </Container>
         </LayoutDiv>
     );
 }
